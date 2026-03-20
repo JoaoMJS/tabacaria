@@ -11,36 +11,63 @@ if($sql->rowCount() > 0){
 ?>
 
 <!DOCTYPE html>
-<html>
-
+<html lang="pt-BR">
 <head>
-<title>Produtos</title>
-<link rel="stylesheet" href="estilo.css">
+  <meta charset="UTF-8">
+  <title>Produtos - Tamanduá</title>
+  <link rel="stylesheet" href="estilo.css">
 </head>
 
 <body>
 
-<h1>Produtos</h1>
+<!-- HEADER -->
+<header class="topo">
+  <div class="container topo-interno">
+    <h1 class="logo">Tamanduá</h1>
 
-<div class="lista-produtos">
+    <nav class="menu">
+      <a href="index.php">Início</a>
+      <a href="produtos.php">Produtos</a>
+      <a href="#">Contato</a>
+    </nav>
+  </div>
+</header>
 
-<?php foreach($produtos as $produto): ?>
+<!-- CONTEÚDO -->
+<main class="container">
 
-<div class="produto">
+  <h2>Catálogo de Produtos</h2>
 
-<h3><?php echo $produto['nome']; ?></h3>
+  <div class="produtos-grid">
 
-<p>R$ <?php echo $produto['preco']; ?></p>
+    <?php foreach($produtos as $produto): ?>
 
-<a href="produto.php?id=<?php echo $produto['id']; ?>">
-Ver produto
-</a>
+      <div class="produto-card">
 
-</div>
+        <img src="../imagens/<?php echo $produto['imagem']; ?>" alt="">
 
-<?php endforeach; ?>
+        <div class="produto-info">
+          <h3><?php echo $produto['nome']; ?></h3>
 
-</div>
+          <p>R$ <?php echo number_format($produto['preco'], 2, ',', '.'); ?></p>
+
+          <a href="produto.php?id=<?php echo $produto['id']; ?>">
+            <button class="botao-comprar">Ver produto</button>
+          </a>
+        </div>
+
+      </div>
+
+    <?php endforeach; ?>
+
+  </div>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="rodape">
+  <p>© 2026 Tamanduá</p>
+</footer>
 
 </body>
 </html>
