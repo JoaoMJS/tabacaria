@@ -5,7 +5,7 @@ $produtos = [];
 
 $sql = $pdo->query("SELECT * FROM produtos");
 
-if($sql->rowCount() > 0 ){
+if($sql->rowCount() > 0){
   $produtos = $sql->fetchAll(PDO::FETCH_ASSOC);
 }
 ?>
@@ -14,68 +14,79 @@ if($sql->rowCount() > 0 ){
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <title>Loja Virtual</title>
+  <title>Tabacaria Tamanduá</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="estilo.css">
 </head>
+
 <body>
 
+<!-- HEADER -->
 <header class="topo">
   <div class="container topo-interno">
     <h1 class="logo">Tamanduá</h1>
 
     <nav class="menu">
       <a href="#">Início</a>
-      <a href="#">Catálogo</a>
+      <a href="produtos.php">Produtos</a>
       <a href="#">Contato</a>
     </nav>
   </div>
 </header>
 
+<!-- BANNER -->
 <section class="banner-principal">
-  <div class="overlay"></div>
-  <div class="container texto-banner">
+  <div class="banner-conteudo">
     <h2>Ofertas Imperdíveis</h2>
-    <p>Confira nossos produtos exclusivos</p>
-    <a href="#" class="botao-banner">Catálogo</a>
+    <p>Os melhores produtos da sua tabacaria</p>
+    <a href="produtos.php" class="botao-banner">Ver Catálogo</a>
   </div>
 </section>
 
-<section class="categorias container">
+<!-- CATEGORIAS -->
+<section class="container categorias">
   <h2>Categorias</h2>
 
-  <div class="grade-categorias">
-    <div class="categoria">Cigarro</div>
-    <div class="categoria">Cinzeiros</div>
+  <div class="categorias-grid">
+    <div class="categoria">Cigarros</div>
     <div class="categoria">Charutos</div>
-    <div class="categoria">Acessórios</div>
-    <div class="categoria">Bebidas não alcoólicas</div>
-    <div class="categoria">Vinhos</div>
     <div class="categoria">Isqueiros</div>
+    <div class="categoria">Acessórios</div>
+    <div class="categoria">Bebidas</div>
   </div>
 </section>
 
-<section class="produtos container">
-  
-<h2>Produtos da Tabacaria</h2>
+<!-- PRODUTOS -->
+<section class="container">
+  <h2>Produtos</h2>
 
-<?php foreach($produtos as $produto): ?>
+  <div class="produtos-grid">
 
-<div class="produto-card">
+    <?php foreach($produtos as $produto): ?>
 
-<img src="../imagens/<?php echo $produto['imagem']; ?>" width="200">
+      <div class="produto-card">
 
-  <h3><?php echo $produto['nome']; ?></h3>
+        <img src="../imagens/<?php echo $produto['imagem']; ?>" alt="">
 
-  <p>R$ <?php echo $produto['preco']; ?></p>
+        <div class="produto-info">
+          <h3><?php echo $produto['nome']; ?></h3>
+          <p>R$ <?php echo $produto['preco']; ?></p>
 
-</div>
+          <a href="produto.php?id=<?php echo $produto['id']; ?>">
+            <button class="botao-comprar">Ver produto</button>
+          </a>
+        </div>
 
-<?php endforeach; ?>
+      </div>
+
+    <?php endforeach; ?>
+
+  </div>
 </section>
 
+<!-- FOOTER -->
 <footer class="rodape">
-  <p>© 2025 Tamanduá</p>
+  <p>© 2026 Tamanduá</p>
 </footer>
 
 </body>
