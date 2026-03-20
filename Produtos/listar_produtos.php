@@ -33,9 +33,8 @@ if($sql->rowCount() > 0){
 <td><?php echo $produto['preco']; ?></td>
 
 <td>
-<a href="excluir_produto.php?id=<?php echo $produto['id']; ?>">Excluir</a></button>
-<a href="../Site/produtos.php">Página no site</a>
-<a href="editar_produto.php?id=<?php echo $produto['id']; ?>">Editar</a></button>
+<a href="excluir_produto.php?id=<?php echo $produto['id']; ?>"><button>Excluir</button>
+<a href="../Site/produtos.php"><button>Página no site</button></a>
 <a href="editar_produto.php?id=<?php echo $produto['id']; ?>"><button>Editar</button>
 </a>
 </a>
