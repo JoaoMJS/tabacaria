@@ -1,4 +1,16 @@
 <?php
+session_start();
+?>
+
+<?php if(isset($_SESSION['nome'])): ?>
+
+<p>Olá, <?= $_SESSION['nome']; ?> | 
+   <a href="../Usuarios/logout.php">Sair</a>
+</p>
+
+<?php endif; ?>
+
+<?php
 require '../config.php';
 
 $produtos = [];
@@ -21,16 +33,35 @@ if($sql->rowCount() > 0){
 
 <body>
 
-<!-- HEADER -->
 <header class="topo">
   <div class="container topo-interno">
     <h1 class="logo">Tamanduá</h1>
 
     <nav class="menu">
-      <a href="#">Início</a>
-      <a href="produtos.php">Produtos</a>
-      <a href="#">Contato</a>
-    </nav>
+
+<a href="index.php">Início</a>
+<a href="produtos.php">Produtos</a>
+<a href="#">Contato</a>
+
+<?php if(isset($_SESSION['usuario'])): ?>
+
+<span>Olá, <?= $_SESSION['nome']; ?></span>
+<a href="../Usuarios/logout.php">Sair</a>
+
+<?php else: ?>
+
+<?php endif; ?>
+
+<?php if(isset($_SESSION['usuario'])): ?>
+
+<?php else: ?>
+
+  <a href="../Usuarios/login.php">Login</a>
+  <a href="../Usuarios/cadastro.php">Cadastro</a>
+
+<?php endif; ?>
+
+</nav>
   </div>
 </header>
 
