@@ -95,3 +95,15 @@ if(!$produto){
 
 </body>
 </html>
+
+<?php if(isset($_SESSION['usuario'])): ?>
+
+<button class="botao-comprar">Comprar</button>
+
+<?php else: ?>
+
+<a href="../Usuarios/login.php">
+  <button class="botao-comprar">Fazer login para comprar</button>
+</a>
+
+<?php endif; ?>
