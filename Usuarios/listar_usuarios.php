@@ -51,6 +51,7 @@ if($sql->rowCount() > 0){
       <th>Data de criação</th>
     </tr>
 
+
     <?php foreach($usuarios as $user): ?>
 
     <tr style="border-bottom:1px solid #333; text-align:center;">
@@ -58,6 +59,14 @@ if($sql->rowCount() > 0){
       <td><?= $user['nome']; ?></td>
       <td><?= $user['email']; ?></td>
       <td><?= $user['criado_em']; ?></td>
+      <td>
+  <a href="editar_usuario.php?id=<?= $user['id']; ?>">Editar</a>
+  |
+  <a href="deletar_usuario.php?id=<?= $user['id']; ?>" 
+     onclick="return confirm('Tem certeza?')">
+     Excluir
+  </a>
+</td>
     </tr>
 
     <?php endforeach; ?>
