@@ -1,4 +1,3 @@
-/* RESET */
 * {
   margin: 0;
   padding: 0;
@@ -6,20 +5,17 @@
   font-family: "Segoe UI", Arial, sans-serif;
 }
 
-/* BODY */
 body {
   background: #0d0d0d;
   color: #eaeaea;
 }
 
-/* CONTAINER */
 .container {
   max-width: 1200px;
   margin: auto;
   padding: 20px;
 }
 
-/* HEADER */
 .topo {
   background: #141414;
   border-bottom: 1px solid #222;
@@ -37,7 +33,6 @@ body {
   color: #00ff88;
 }
 
-/* MENU */
 .menu a {
   color: #ccc;
   margin-left: 20px;
@@ -49,9 +44,7 @@ body {
   color: #00ff88;
 }
 
-/* ===================== */
-/* BANNER (CORRIGIDO) */
-/* ===================== */
+/* Parte da imagem no banner principal, onde aparece "50%"*/
 
 .banner-principal {
   height: 320px;
@@ -92,10 +85,6 @@ body {
   font-weight: bold;
 }
 
-/* ===================== */
-/* CATEGORIAS */
-/* ===================== */
-
 .categorias h2 {
   margin-bottom: 15px;
 }
@@ -135,10 +124,6 @@ body {
   color: #000;
 }
 
-/* ===================== */
-/* PRODUTOS */
-/* ===================== */
-
 .produtos-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
@@ -165,7 +150,6 @@ body {
   object-fit: cover;
 }
 
-/* INFO */
 .produto-info {
   padding: 15px;
   text-align: center;
@@ -181,7 +165,6 @@ body {
   font-weight: bold;
 }
 
-/* BOTÃO */
 .botao-comprar {
   margin-top: 10px;
   padding: 10px;
@@ -197,10 +180,6 @@ body {
 .botao-comprar:hover {
   background: #00cc6a;
 }
-
-/* ===================== */
-/* PÁGINA DO PRODUTO */
-/* ===================== */
 
 .produto-pagina {
   display: flex;
@@ -235,8 +214,6 @@ body {
   color: #ccc;
   line-height: 1.5;
 }
-
-/* TAG */
 .categoria-tag {
   display: inline-block;
   background: #00ff88;
@@ -247,10 +224,6 @@ body {
   margin-bottom: 10px;
 }
 
-/* ===================== */
-/* FOOTER */
-/* ===================== */
-
 .rodape {
   margin-top: 50px;
   text-align: center;
@@ -259,10 +232,6 @@ body {
   border-top: 1px solid #222;
   color: #aaa;
 }
-
-/* ===================== */
-/* RESPONSIVO */
-/* ===================== */
 
 @media (max-width: 768px) {
   .produto-pagina {
@@ -274,4 +243,10 @@ body {
     width: 100%;
     max-width: 300px;
   }
+}
+
+.usuario-logado {
+  margin-left: 20px;
+  color: #00ff88;
+  font-weight: bold;
 }
