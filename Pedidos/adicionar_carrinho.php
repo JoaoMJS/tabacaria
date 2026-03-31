@@ -4,6 +4,7 @@ session_start();
 $id = $_POST['produto_id'];
 $nome = $_POST['nome'];
 $preco = $_POST['preco'];
+$imagem = $_POST['imagem'];
 
 if (!isset($_SESSION['carrinho'])) {
     $_SESSION['carrinho'] = [];

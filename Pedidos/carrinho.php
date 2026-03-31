@@ -31,7 +31,7 @@ $total = 0;
 
 <div class="carrinho-item">
 
-<img src="../imagens/<?php echo $item['imagem']; ?>" width="60">
+<img src="/tabacaria/imagens/<?= $item['imagem'] ?>" width="60">
 
 <div class="item-info">
   <span class="item-nome"><?= $item['nome'] ?></span>
@@ -71,7 +71,7 @@ $total = 0;
     <?php endforeach; ?>
 
     <div class="carrinho-total">
-      Total: R$ <?= number_format($total, 2, ',', '.') ?>
+
     </div>
 
     <form action="finalizar_pedido.php" method="POST">
