@@ -5,9 +5,6 @@ $id = $_POST['produto_id'];
 $nome = $_POST['nome'];
 $preco = $_POST['preco'];
 
-
-
-
 if (!isset($_SESSION['carrinho'])) {
     $_SESSION['carrinho'] = [];
 }
