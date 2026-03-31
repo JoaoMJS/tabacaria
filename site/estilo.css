@@ -250,3 +250,108 @@ body {
   color: #00ff88;
   font-weight: bold;
 }
+
+/* ===================== */
+/* 🛒 CARRINHO */
+/* ===================== */
+
+.carrinho-container {
+  margin-top: 30px;
+}
+
+.carrinho-titulo {
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+.carrinho-vazio {
+  color: #888;
+  font-size: 16px;
+}
+
+.carrinho-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #181818;
+  border: 1px solid #222;
+  border-radius: 10px;
+  padding: 15px;
+  margin-bottom: 15px;
+  transition: 0.2s;
+}
+
+.carrinho-item:hover {
+  border-color: #00ff88;
+}
+
+.item-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.item-nome {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.item-quantidade {
+  color: #aaa;
+  font-size: 14px;
+}
+
+.item-preco {
+  font-size: 18px;
+  color: #00ff88;
+  font-weight: bold;
+}
+
+.carrinho-total {
+  margin-top: 20px;
+  font-size: 22px;
+  font-weight: bold;
+  text-align: right;
+}
+
+.botao-finalizar {
+  margin-top: 20px;
+  width: 100%;
+  padding: 12px;
+  background: #00ff88;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.botao-finalizar:hover {
+  background: #00cc6a;
+}
+
+.carrinho-item form {
+  margin-top: 5px;
+}
+
+.carrinho-item input {
+  width: 60px;
+  padding: 5px;
+  background: #111;
+  border: 1px solid #333;
+  color: #fff;
+  border-radius: 5px;
+}
+
+.carrinho-item button {
+  margin-left: 5px;
+  padding: 6px 10px;
+  border: none;
+  background: #00ff88;
+  color: #000;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.carrinho-item a button {
+  background: #ff4d4d;
+  color: #fff;
+}

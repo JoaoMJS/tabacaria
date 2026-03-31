@@ -42,6 +42,8 @@ if($sql->rowCount() > 0){
 <a href="index.php">Início</a>
 <a href="produtos.php">Produtos</a>
 <a href="#">Contato</a>
+<a href="../Pedidos/carrinho.php">Carrinho</a>
+<a href="../Pedidos/meus_pedidos.php">Meus pedidos</a>
 
 <?php if(isset($_SESSION['usuario'])): ?>
 

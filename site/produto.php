@@ -1,4 +1,5 @@
 <?php
+session_start();
 require '../config.php';
 
 // verifica se veio ID
@@ -70,7 +71,24 @@ if(!$produto){
         R$ <?= number_format($produto['preco'], 2, ',', '.'); ?>
       </p>
 
-      <button class="botao-comprar">Comprar</button>
+      <?php if(isset($_SESSION['usuario'])): ?>
+
+<form action="../Pedidos/adicionar_carrinho.php" method="POST">
+  <input type="hidden" name="produto_id" value="<?= $produto['id']; ?>">
+  <input type="hidden" name="nome" value="<?= $produto['nome']; ?>">
+  <input type="hidden" name="preco" value="<?= $produto['preco']; ?>">
+  <input type="hidden" name="imagem" value="<?= $produto['imagem']; ?>">
+  
+  <button class="botao-comprar">Adicionar ao carrinho</button>
+</form>
+
+<?php else: ?>
+
+<a href="../Usuarios/login.php">
+  <button class="botao-comprar">Fazer login para comprar</button>
+</a>
+
+<?php endif; ?>
 
       <p class="descricao">
         <?= $produto['descricao'] ?? 'Este produto não possui descrição.'; ?>
@@ -96,14 +114,8 @@ if(!$produto){
 </body>
 </html>
 
-<?php if(isset($_SESSION['usuario'])): ?>
-
-<button class="botao-comprar">Comprar</button>
-
-<?php else: ?>
-
 <a href="../Usuarios/login.php">
   <button class="botao-comprar">Fazer login para comprar</button>
 </a>
 
-<?php endif; ?>
+<?php?>
