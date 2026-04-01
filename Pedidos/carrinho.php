@@ -27,7 +27,9 @@ $total = 0;
     <?php foreach ($carrinho as $item): 
       $subtotal = $item['preco'] * $item['quantidade'];
       $total += $subtotal;
+      
     ?>
+    
 
 <div class="carrinho-item">
 
@@ -73,6 +75,12 @@ $total = 0;
     <div class="carrinho-total">
 
     </div>
+
+    <form action="finalizar_pedido.php" method="POST">
+
+    <input type="text" name="endereco" placeholder="Digite seu endereço" required>
+
+    </form>
 
     <form action="finalizar_pedido.php" method="POST">
       <button class="botao-finalizar">Finalizar Pedido</button>
